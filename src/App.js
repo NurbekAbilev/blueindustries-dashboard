@@ -19,7 +19,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+        const response = await axios.get('https://w4i1vz3nzk.execute-api.us-east-1.amazonaws.com/dev/dashboard');
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -78,12 +78,12 @@ export default function App() {
           {data.map((item) => (
             <TableRow key={item.workspace}>
               <TableCell className="font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
-                {item.userId}
+                {item.name}
               </TableCell>
-              <TableCell>{item.id}</TableCell>
-              <TableCell>{item.title}</TableCell>
-              <TableCell>{item.compelted ? 'True' : 'False  '}</TableCell>
-              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.week1}</TableCell>
+              <TableCell>{item.week2}</TableCell>
+              <TableCell>{item.week3}</TableCell>
+              <TableCell>{item.week4}</TableCell>
             </TableRow>
           ))}
         </TableBody>
